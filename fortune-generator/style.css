@@ -1,0 +1,177 @@
+:root {
+    --md-sys-color-background: #FDF8F5;
+    --md-sys-color-surface: #FFFFFF;
+    --md-sys-color-surface-variant: #F4EFEA;
+    --md-sys-color-on-surface: #1C1B1F;
+    
+    --md-dynamic-green: #4CAF50;
+    --md-dynamic-yellow: #FFEB3B;
+    --md-dynamic-blue: #2196F3;
+    --md-dynamic-orange: #FF9800;
+    
+    --radius-large: 28px;
+    --radius-medium: 16px;
+    --transition-smooth: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'Google Sans', sans-serif;
+    background: linear-gradient(145deg, var(--md-sys-color-background), var(--md-sys-color-surface-variant));
+    color: var(--md-sys-color-on-surface);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+
+.top-app-bar {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-brand {
+    color: var(--md-dynamic-orange);
+    font-size: 28px;
+}
+
+.top-app-bar h1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+.interactive-zone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    max-width: 850px;
+    width: 100%;
+}
+
+
+.fortune-card {
+    border-radius: var(--radius-large);
+    padding: 2.5rem;
+    flex: 1;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: var(--transition-smooth);
+    text-align: center;
+    border-width: 4px;
+    border-style: solid;
+    color:#810B38;
+    background-color: #DCC3AA;
+}
+
+#fortune-text {
+    font-weight: 500;
+    line-height: 1.5;
+    transition: var(--transition-smooth);
+}
+
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+
+.md-btn {
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-medium);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition-smooth);
+}
+
+.md-btn span {
+    font-size: 24px;
+    color: #212121;
+    transition: var(--transition-smooth);
+}
+
+
+.btn-green  { background-color: var(--md-dynamic-green); }
+.btn-yellow { background-color: var(--md-dynamic-yellow); }
+.btn-blue   { background-color: var(--md-dynamic-blue); }
+.btn-orange { background-color: var(--md-dynamic-orange); }
+
+.md-btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.md-btn:hover span {
+    transform: rotate(45deg);
+}
+
+.md-btn:active {
+    transform: scale(0.95);
+}
+
+
+.page-footer {
+    background-color: rgba(244, 239, 234, 0.5);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #757575;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 680px) {
+    .interactive-zone {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .controls-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .fortune-card {
+        width: 100%;
+        padding: 1.75rem;
+    }
+}
